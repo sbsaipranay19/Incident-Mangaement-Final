@@ -130,7 +130,7 @@ app.post("/send", (req, res) => {
               "
             >
               <p class="MsoNormal">
-                <b></b
+                <b>`+data.incident_num+`</b
                 ><span style="font-size: 11pt"><u></u><u></u></span>
               </p>
             </td>
@@ -299,7 +299,7 @@ app.post("/send", (req, res) => {
               "
             >
               <p class="MsoNormal">
-                <b><input name="incident_manager" type="text" id="incident_manager" /></b
+                <b>`+data.incident_manager+`</b
                 ><span style="font-size: 11pt"><u></u><u></u></span>
               </p>
             </td>
@@ -394,7 +394,7 @@ app.post("/send", (req, res) => {
               "
             >
               <p class="MsoNormal">
-                <b><input name="estimated_time" type="text" id="estimated_time" /></b
+                <b>`+data.estimated_time+`</b
                 ><span style="font-size: 11pt"><u></u><u></u></span>
               </p>
             </td>
@@ -438,7 +438,7 @@ app.post("/send", (req, res) => {
               "
             >
               <p class="MsoNormal">
-                <b><input name="bridge_details" type="text" id="bridge_details" /></b
+                <b>`+data.bridge_details+`</b
                 ><span style="font-size: 11pt"><u></u><u></u></span>
               </p>
             </td>
@@ -485,7 +485,7 @@ app.post("/send", (req, res) => {
               "
             >
               <p class="MsoNormal">
-                <b><input name="service_impacted" type="text" id="services_impacted" /></b
+                <b>`+data.services_impacted+`</b
                 ><span style="font-size: 11pt"><u></u><u></u></span>
               </p>
             </td>
@@ -651,12 +651,7 @@ app.post("/send", (req, res) => {
                 >&nbsp;</span
               ><span style="font-size: 11pt"><u></u><u></u></span>
 
-              <textarea
-                name="incident_details"
-                rows="24"
-                cols="50"
-                id="incident_details"
-              ></textarea>
+              `+data.incident_details+`
 
               <span
                 style="
@@ -791,13 +786,8 @@ app.post("/send", (req, res) => {
                 >&nbsp;</span
               ><span style="font-size: 11pt"><u></u><u></u></span>
 
-              <textarea
-                name="business_impact"
-                rows="24"
-                cols="50"
-                id="business_impact"
-              ></textarea
-              ><span style="font-size: 11pt"><u></u><u></u></span>
+              `+data.business_impact+`
+              <span style="font-size: 11pt"><u></u><u></u></span>
             </td>
             <td
               width="32%"
@@ -824,13 +814,8 @@ app.post("/send", (req, res) => {
                 >&nbsp;</span
               ><span style="font-size: 11pt"><u></u><u></u></span>
 
-              <textarea
-                name="incident_timeline"
-                rows="24"
-                cols="50"
-                id="incident_timeline"
-              ></textarea
-              ><span style="font-size: 11pt"><u></u><u></u></span>
+              `+data.incident_timeline+`
+              <span style="font-size: 11pt"><u></u><u></u></span>
             </td>
           </tr>
           <tr>
