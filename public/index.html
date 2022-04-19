@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .grid-item1 {
+        grid-area: tf1;
+      }
+      .grid-item2 {
+        grid-area: tf2;
+      }
+      .grid-item3 {
+        grid-area: tf3;
+      }
+      .grid-item4 {
+        grid-area: tf4;
+      }
+      .grid-item5 {
+        grid-area: tf5;
+      }
+      .grid-item6 {
+        grid-area: tf6;
+      }
+      .grid-item7 {
+        grid-area: tf7;
+      }
+      .grid-item8 {
+        grid-area: tf8;
+      }
+      .grid-item9 {
+        grid-area: tf9;
+      }
+      .grid-item10 {
+        grid-area: tf10;
+      }
+      .grid-item11 {
+        grid-area: tf11;
+      }
+      .grid-item12 {
+        grid-area: tf12;
+      }
+      .grid-item13 {
+        grid-area: tf13;
+      }
+      .grid-item14 {
+        grid-area: tf14;
+      }
+      .grid-item15 {
+        grid-area: tf15;
+      }
+      .grid-item16 {
+        grid-area: tf16;
+      }
+      .grid-item17 {
+        grid-area: tf17;
+      }
+      .grid-item0 {
+        grid-area: tf0;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "tf0 tf0 tf0 tf0 tf0 tf0 tf0 tf0 tf0 tf0"
+          "tf1 tf2 tf2 tf2 tf3 tf4 tf4 tf5 tf6 tf6"
+          "tf7 tf8 tf8 tf8 tf9 tf10 tf10 tf11 tf12 tf12"
+          "tf13 tf14 tf14 tf14 tf14 tf14 tf14 tf15 tf16 tf16";
+        border: 1px solid #000;
+        margin-bottom: 30px;
+      }
+
+      .grid-container > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #000;
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+      }
+      .grid2-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
+
+      .grid-item {
+        border: 1px solid #000;
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .button {
+        margin-top: 30px;
+        padding: 5px;
+      }
+
+      .submit {
+        margin: auto;
+      }
+    </style>
+    <title>Nodemailer Tutorial</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="section-title">
+        <form
+          id="contact-form"
+          method="POST"
+          action="send"
+          enctype="multipart/form-data"
+        >
+        <div class="form-group">
+          <table
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+            align="left"
+            width="99%"
+            style="
+              width: 99.02%;
+              border-collapse: collapse;
+              margin-left: 6.75pt;
+              margin-right: 6.75pt;
+            "
+          >
+            <tbody>
+              <tr style="height: 23.75pt">
+                <td
+                  width="100%"
+                  colspan="10"
+                  style="
+                    width: 100%;
+                    border: solid windowtext 1pt;
+                    background: #8eaadb;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 23.75pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><span
+                        style="
+                          font-size: 16pt;
+                          font-family: 'Arial', sans-serif;
+                        "
+                        >Major Incident Management Notificatio<span
+                          style="color: black"
+                          >n</span
+                        ></span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr style="height: 35pt">
+                <td
+                  width="11%"
+                  style="
+                    width: 11.48%;
+                    border: solid windowtext 1pt;
+                    border-top: none;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Number</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="20%"
+                  style="
+                    width: 20.38%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b><input name="incident_num" type="text" id="incident_num" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  colspan="2"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Status</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: red;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><input
+                        id="status"
+                        name="push-notifications"
+                        type="radio"
+                      />
+                      <label
+                        for="push-email"
+                        class="ml-3 block text-sm font-medium text-gray-700"
+                      >
+                        Open
+                      </label>
+
+                      <input
+                        id="push-nothing"
+                        name="push-notifications"
+                        type="radio"
+                        class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+                      />
+                      <label
+                        for="push-nothing"
+                        class="ml-3 block text-sm font-medium text-gray-700"
+                      >
+                        Closed
+                      </label></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  colspan="3"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Start Time</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="17%"
+                  colspan="2"
+                  style="
+                    width: 17.4%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 35pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><input
+                        type="date"
+                        id="date-time"
+                        autocomplete="current-date-time" /><br />
+                      <input
+                        type="time"
+                        id="time"
+                        autocomplete="current-date-time" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr style="height: 28.25pt">
+                <td
+                  width="11%"
+                  style="
+                    width: 11.48%;
+                    border: solid windowtext 1pt;
+                    border-top: none;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Manager</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="20%"
+                  style="
+                    width: 20.38%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b><input name="incident_manager" type="text" id="incident_manager" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  colspan="2"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Priority</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><select id="priority" autocomplete="status-name">
+                        <option disabled="" selected="">Select severity</option>
+                        <option>Severity 1</option>
+                        <option>Severity 2</option>
+                        <option>Severity 3</option>
+                      </select></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  colspan="3"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Estimated End Time</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="17%"
+                  colspan="2"
+                  style="
+                    width: 17.4%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b><input name="estimated_time" type="text" id="estimated_time" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr style="height: 28.25pt">
+                <td
+                  width="11%"
+                  style="
+                    width: 11.48%;
+                    border: solid windowtext 1pt;
+                    border-top: none;
+                    background: #d9e2f3;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Bridge Details</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="54%"
+                  colspan="4"
+                  style="
+                    width: 54.22%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b><input name="bridge_details" type="text" id="bridge_details" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="16%"
+                  colspan="3"
+                  style="
+                    width: 16.92%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 0cm 0cm 0cm;
+                    height: 28.25pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><span
+                        style="
+                          font-size: 11pt;
+                          font-family: 'Arial', sans-serif;
+                        "
+                        >Services Impacted</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="17%"
+                  colspan="2"
+                  style="
+                    width: 17.4%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 28.25pt;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <b><input name="service_impacted" type="text" id="services_impacted" /></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  width="11%"
+                  style="width: 11.48%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="20%"
+                  style="width: 20.38%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="16%"
+                  colspan="2"
+                  style="width: 16.92%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="16%"
+                  style="width: 16.92%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="0%"
+                  style="width: 0.1%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="16%"
+                  colspan="3"
+                  style="width: 16.92%; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="106"
+                  style="
+                    width: 79.5pt;
+                    border: none;
+                    border-bottom: solid windowtext 1pt;
+                    padding: 0cm 0cm 0cm 0cm;
+                  "
+                >
+                  <p class="MsoNormal">
+                    <span style="font-size: 11pt">&nbsp;<u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr style="height: 25.55pt">
+                <td
+                  width="32%"
+                  colspan="3"
+                  style="
+                    width: 32.06%;
+                    border: solid windowtext 1pt;
+                    background: #8eaadb;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 25.55pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><span
+                        style="
+                          font-size: 16pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Details</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="35%"
+                  colspan="4"
+                  style="
+                    width: 35.84%;
+                    border: solid windowtext 1pt;
+                    border-left: none;
+                    background: #8eaadb;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 25.55pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><span
+                        style="
+                          font-size: 16pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Business Impact</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+                <td
+                  width="32%"
+                  colspan="3"
+                  style="
+                    width: 32.1%;
+                    border: solid windowtext 1pt;
+                    border-left: none;
+                    background: #8eaadb;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 25.55pt;
+                  "
+                >
+                  <p
+                    class="MsoNormal"
+                    align="center"
+                    style="text-align: center"
+                  >
+                    <b
+                      ><span
+                        style="
+                          font-size: 16pt;
+                          font-family: 'Arial', sans-serif;
+                          color: black;
+                        "
+                        >Incident Timeline</span
+                      ></b
+                    ><span style="font-size: 11pt"><u></u><u></u></span>
+                  </p>
+                </td>
+              </tr>
+              <tr style="height: 60.4pt">
+                <td
+                  width="32%"
+                  colspan="3"
+                  valign="top"
+                  style="
+                    width: 32.06%;
+                    border: solid windowtext 1pt;
+                    border-top: none;
+                    background: white;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 10.4pt;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <textarea
+                    name="incident_details"
+                    rows="24"
+                    cols="50"
+                    id="incident_details"
+                  ></textarea>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+                </td>
+                <td
+                  width="35%"
+                  colspan="4"
+                  valign="top"
+                  style="
+                    width: 35.84%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: white;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 10.4pt;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                      background: white;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <textarea
+                    name="business_impact"
+                    rows="24"
+                    cols="50"
+                    id="business_impact"
+                  ></textarea
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+                </td>
+                <td
+                  width="32%"
+                  colspan="3"
+                  valign="top"
+                  style="
+                    width: 32.1%;
+                    border-top: none;
+                    border-left: none;
+                    border-bottom: solid windowtext 1pt;
+                    border-right: solid windowtext 1pt;
+                    background: white;
+                    padding: 0cm 5.4pt 0cm 5.4pt;
+                    height: 10.4pt;
+                  "
+                >
+                  <span
+                    style="
+                      font-size: 11pt;
+                      font-family: 'Calibri', sans-serif;
+                      color: black;
+                      background: white;
+                    "
+                    >&nbsp;</span
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+
+                  <textarea
+                    name="incident_timeline"
+                    rows="24"
+                    cols="50"
+                    id="incident_timeline"
+                  ></textarea
+                  ><span style="font-size: 11pt"><u></u><u></u></span>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  width="80"
+                  style="width: 60pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="143"
+                  style="width: 107.25pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="1"
+                  style="width: 0.75pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="117"
+                  style="width: 87.75pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="118"
+                  style="width: 88.5pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="1"
+                  style="width: 0.75pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="15"
+                  style="width: 11.25pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="103"
+                  style="width: 77.25pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="1"
+                  style="width: 0.75pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+                <td
+                  width="121"
+                  style="width: 90.75pt; padding: 0cm 0cm 0cm 0cm"
+                ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+          <button type="submit" value="submit" class="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <script src="./index.js"></script>
+  </body>
+</html>
